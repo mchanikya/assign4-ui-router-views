@@ -1,9 +1,11 @@
 (function(){
 	'use strict';
 	angular.module("RestaurantApp")
-	.controller('CategoriesAppController',CategoriesAppController);
+	.controller('CategoriesAppController',CategoriesAppController)
+	.service('fetchItemCategories',fetchItemCategories);
 	
-	function CategoriesAppController(){
+	CategoriesAppController.$inject=['fetchItemCategories'];
+	function CategoriesAppController(fetchItemCategories){
 		var CategoriesItems = this;
 
 		// List of shopping items
@@ -27,8 +29,19 @@
 		});
 
 		CategoriesItems.getItems = function () {
-			// body...
-			return items;
+			console.log("In getItems");
+			fetchItemCategories.getCategories();
+			// return items;
 		}
 	}
+
+	fetchItemCategories.$inject=['$http'];
+	function fetchItemCategories($http){
+		var service = this;
+		service.getCategories = function () {
+			console.log("In fetchItemCategories");
+			// body...
+		}
+	}
+
 })();

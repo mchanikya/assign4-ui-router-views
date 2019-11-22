@@ -7,11 +7,11 @@
 		<title>Restaurant Menu</title>
 	</head>
 	<body>
-		<h1 style="padding-left: 20px; padding-bottom: 10px; padding-top: 10px; font-weight: bold; color: white; background-color: grey;  ">Welcome to Restaurant</h1>
+		<h1 style="padding-left: 20px; padding-bottom: 10px; padding-top: 10px; font-weight: bold; color: white; background-color: grey;">Welcome to Restaurant</h1>
 		<!-- ui-router include -->
 
-		<div style="padding-left: 20px; ">
-			<a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="categories" ui-sref-active="activeTab">categories of menu items</a>
+		<div style="padding-left: 20px;" ng-controller='CategoriesAppController as ctrl'>
+			<a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="categories" ui-sref-active="activeTab" ng-click='ctrl.getItems()'>categories of menu items</a>
 			<!-- <a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="items" ui-sref-active="activeTab">Items</a> -->
 		</div>
 
