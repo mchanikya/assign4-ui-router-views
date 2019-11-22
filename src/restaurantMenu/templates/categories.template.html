@@ -1,1 +1,8 @@
 <h2>Categoreis template</h2>
+<div ng-controller='CategoriesAppController as ctrl'>
+	<ul>
+		<li ng-repeat='item in ctrl.items'>
+			<a ui-sref="items" ui-sref-active="activeTab">{{item.name}}</a>
+		</li>
+	</ul>
+</div>

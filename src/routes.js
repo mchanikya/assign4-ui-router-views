@@ -18,8 +18,8 @@
 			url: '/',
 			templateUrl:'src/restaurantMenu/templates/home.template.html'
 		})
-		.state('cat',{
-			url: '/cat',
+		.state('categories',{
+			url: '/categories',
 			templateUrl:'src/restaurantMenu/templates/categories.template.html'
 		})
 		.state('items',{

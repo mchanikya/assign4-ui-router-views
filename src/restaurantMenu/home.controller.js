@@ -1,5 +1,5 @@
 (function(){
 	'use strict';
-	angular.module("HomeApp",[]);
+	angular.module("RestaurantApp");
 	
 })();

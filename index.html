@@ -2,17 +2,17 @@
 <html ng-app='RestaurantApp'>
 	<head>
 		<!-- <meta charset="utf-8"> -->
-		<!-- <link rel="stylesheet" href="css/styles.css"> -->
+		<link rel="stylesheet" href="styles/styles.css">
+		<link rel="stylesheet" href="styles/bootstrap.min.css">
 		<title>Restaurant Menu</title>
 	</head>
 	<body>
-		<h1>Welcome to Restaurant Menu</h1>
-		<ui-view></ui-view>
+		<h1 style="padding-left: 20px; padding-bottom: 10px; padding-top: 10px; font-weight: bold; color: white; background-color: grey;  ">Welcome to Restaurant</h1>
 		<!-- ui-router include -->
 
-		<div>
-			<a ui-sref="cat" ui-sref-active="activeTab">Categories</a>
-			<a ui-sref="items" ui-sref-active="activeTab">Items</a>
+		<div style="padding-left: 20px; ">
+			<a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="categories" ui-sref-active="activeTab">categories of menu items</a>
+			<!-- <a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="items" ui-sref-active="activeTab">Items</a> -->
 		</div>
 
 		<script src="lib/angular.min.js"></script>
@@ -28,5 +28,6 @@
 		<script src="src/restaurantMenu/home.controller.js"></script>
 		<script src="src/restaurantMenu/itemsList.controller.js"></script>
 		<script src="src/restaurantMenu/categories.controller.js"></script>
+		<ui-view></ui-view>
 	</body>
 </html>
