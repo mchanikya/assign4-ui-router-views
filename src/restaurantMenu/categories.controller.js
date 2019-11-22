@@ -35,8 +35,8 @@
 		}
 	}
 
-	fetchItemCategories.$inject=['$http'];
-	function fetchItemCategories($http){
+	fetchItemCategories.$inject=['$q','$http'];
+	function fetchItemCategories($q,$http){
 		var service = this;
 		service.getCategories = function () {
 			console.log("In fetchItemCategories");
