@@ -20,11 +20,21 @@
 		})
 		.state('categories',{
 			url: '/categories',
-			templateUrl:'src/restaurantMenu/templates/categories.template.html'
+			templateUrl:'src/restaurantMenu/templates/categories.template.html',
+			controller: 'CategoriesAppController as ctrl'
 		})
 		.state('items',{
-			url: '/items',
-			templateUrl:'src/restaurantMenu/templates/itemsList.template.html'
+			url: '/items/{itemId}',
+			templateUrl:'src/restaurantMenu/templates/itemsList.template.html',
+			controller: 'ItemDetailController as itemDetail',
+			resolve:{
+				itemsList: ['$stateParams','fetchItemCategories',function($stateParams, fetchItemCategories){
+					console.log("itemsList:",fetchItemCategories.getItems($stateParams.itemId));
+					// var index = ctrl.getItemFilter($stateParams.itemId);
+					// console.log("index:",index);
+						return fetchItemCategories.getItems($stateParams.itemId);
+				}]
+			}
 		});
 
 	}

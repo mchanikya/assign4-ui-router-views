@@ -11,7 +11,7 @@
 		<!-- ui-router include -->
 
 		<div style="padding-left: 20px;" ng-controller='CategoriesAppController as ctrl'>
-			<a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="categories" ui-sref-active="activeTab" ng-click='ctrl.getItems()'>categories of menu items</a>
+			<a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="categories" ui-sref-active="activeTab" >categories of menu items</a>
 			<!-- <a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="items" ui-sref-active="activeTab">Items</a> -->
 		</div>
 
@@ -28,6 +28,7 @@
 		<script src="src/restaurantMenu/home.controller.js"></script>
 		<script src="src/restaurantMenu/itemsList.controller.js"></script>
 		<script src="src/restaurantMenu/categories.controller.js"></script>
+		<script type="text/javascript" src="src/restaurantMenu/restaurant.service.js"></script>
 		<ui-view></ui-view>
 	</body>
 </html>

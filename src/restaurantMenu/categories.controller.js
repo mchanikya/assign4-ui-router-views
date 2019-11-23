@@ -1,47 +1,35 @@
 (function(){
 	'use strict';
 	angular.module("RestaurantApp")
-	.controller('CategoriesAppController',CategoriesAppController)
-	.service('fetchItemCategories',fetchItemCategories);
-	
+	.controller('CategoriesAppController',CategoriesAppController);
+
 	CategoriesAppController.$inject=['fetchItemCategories'];
 	function CategoriesAppController(fetchItemCategories){
 		var CategoriesItems = this;
-
+		CategoriesItems.cats=[];
 		// List of shopping items
 		CategoriesItems.items = [];
 
-		// Pre-populate a no cookie list
-		CategoriesItems.items.push({
-			name: "Sugar",
-			quantity: "2 bags",
-			description: "Sugar used for baking delicious umm... baked goods."
+		var promise = fetchItemCategories.getMenuItems();
+		promise.then(function(itemCategories){
+				CategoriesItems.items=itemCategories.data.menu_items
+			if (CategoriesItems.cats.length==0) {
+				 console.log(itemCategories.data.menu_items);
+				 var ct1 = 'A';
+				 CategoriesItems.cats = [];
+				 CategoriesItems.cats.push(ct1);
+				 for (var i = 0; i < itemCategories.data.menu_items.length; i++) {
+				 		if ( itemCategories.data.menu_items[i].short_name[0] !== ct1)
+						{
+							if (CategoriesItems.cats.indexOf(ct1) == -1) {
+								CategoriesItems.cats.push(ct1);
+							}
+							ct1 = itemCategories.data.menu_items[i].short_name[0];
+						}
+				 }
+		 }
+		}).catch(function(){
+			console.log("Failed to fetch restuarant menu");
 		});
-		CategoriesItems.items.push({
-			name: "flour",
-			quantity: "1 bags",
-			description: "High quality wheat flour. Mix it with water, sugar, 2 raw eggs."
-		});
-		CategoriesItems.items.push({
-			name: "Chocolate Chips",
-			quantity: "3 bags",
-			description: "Put these in the dough. No reason, really. Gotta store them somewhere!"
-		});
-
-		CategoriesItems.getItems = function () {
-			console.log("In getItems");
-			fetchItemCategories.getCategories();
-			// return items;
-		}
 	}
-
-	fetchItemCategories.$inject=['$q','$http'];
-	function fetchItemCategories($q,$http){
-		var service = this;
-		service.getCategories = function () {
-			console.log("In fetchItemCategories");
-			// body...
-		}
-	}
-
 })();
