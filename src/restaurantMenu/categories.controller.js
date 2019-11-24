@@ -9,12 +9,10 @@
 		CategoriesItems.cats=[];
 		// List of shopping items
 		CategoriesItems.items = [];
-
 		var promise = fetchItemCategories.getMenuItems();
 		promise.then(function(itemCategories){
 				CategoriesItems.items=itemCategories.data.menu_items
 			if (CategoriesItems.cats.length==0) {
-				 console.log(itemCategories.data.menu_items);
 				 var ct1 = 'A';
 				 CategoriesItems.cats = [];
 				 CategoriesItems.cats.push(ct1);
@@ -28,6 +26,7 @@
 						}
 				 }
 		 }
+		fetchItemCategories.setDetails(CategoriesItems.cats,CategoriesItems.items);
 		}).catch(function(){
 			console.log("Failed to fetch restuarant menu");
 		});

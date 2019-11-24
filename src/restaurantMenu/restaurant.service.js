@@ -7,10 +7,18 @@
   fetchItemCategories.$inject=['$http'];
   function fetchItemCategories($http){
   	var service = this;
-  	service.getItems=function(filter){
-  		console.log("filter:  ",filter);
-  			return ['1','2','3'];
+    service.Catlog = [];
+    service.items=[];
+    service.list=[];
+
+    service.getItems=function(){
+        return service.items;
   	}
+
+    service.setDetails=function(cats,itemsList){
+      service.Catlog=cats;
+      service.items=itemsList;
+    }
   	service.getMenuItems = function(){
   		var response= $http({
   			method: 'GET',

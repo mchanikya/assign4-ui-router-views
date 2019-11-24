@@ -29,10 +29,18 @@
 			controller: 'ItemDetailController as itemDetail',
 			resolve:{
 				itemsList: ['$stateParams','fetchItemCategories',function($stateParams, fetchItemCategories){
-					console.log("itemsList:",fetchItemCategories.getItems($stateParams.itemId));
-					// var index = ctrl.getItemFilter($stateParams.itemId);
-					// console.log("index:",index);
-						return fetchItemCategories.getItems($stateParams.itemId);
+					var rList=fetchItemCategories.getItems();
+					var sList=[];
+					if (rList.length>0) {
+						for (var i = 0; i<rList.length; i++){
+							if (rList[i].short_name[0]==$stateParams.itemId) {
+								sList.push(rList[i]);
+							}
+						}
+						return rList;
+					}else{
+						return ['1','2','5','3'];
+					}
 				}]
 			}
 		});

@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html ng-app='RestaurantApp'>
 	<head>
-		<!-- <meta charset="utf-8"> -->
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="styles/styles.css">
 		<link rel="stylesheet" href="styles/bootstrap.min.css">
 		<title>Restaurant Menu</title>
@@ -25,10 +25,11 @@
     	<script src="src/routes.js"></script>
 
     	<!-- module artifacts -->
+		<script type="text/javascript" src="src/restaurantMenu/restaurant.service.js"></script>	
 		<script src="src/restaurantMenu/home.controller.js"></script>
 		<script src="src/restaurantMenu/itemsList.controller.js"></script>
 		<script src="src/restaurantMenu/categories.controller.js"></script>
-		<script type="text/javascript" src="src/restaurantMenu/restaurant.service.js"></script>
+		<!-- <script type="text/javascript" src="src/restaurantMenu/restaurant.service.js"></script> -->
 		<ui-view></ui-view>
 	</body>
 </html>
