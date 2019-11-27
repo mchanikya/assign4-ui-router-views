@@ -1,9 +1,8 @@
-<h2>Available Categoreis</h2>
+<h2>Available Categories</h2>
 <div>
 	<ul>
 		<li ng-repeat='item in ctrl.cats'>
-			<a ui-sref="items({itemId:$index})" ui-sref-active="activeTab">{{item}} </a>
-			<!-- <br ng-if='item{index -1}'> -->
+			<a ui-sref="items({itemId:item.short_name})" ui-sref-active="activeTab">{{item.short_name}} </a>
 		</li>
 	</ul>
 </div>

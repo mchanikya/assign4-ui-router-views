@@ -14,10 +14,24 @@
   	service.getMenuItems = function(){
   		var response= $http({
   			method: 'GET',
-  			url: ('http://davids-restaurant.herokuapp.com/menu_items.json')
+  			url: ('http://davids-restaurant.herokuapp.com/categories.json')
   		});
   		return response;
   	};
+    
+  service.getMenuForCategory = function (shortName) {
+    var response = $http({
+      method: "GET",
+      url: 'http://davids-restaurant.herokuapp.com/menu_items.json',
+      params: {
+        category: shortName
+      }
+    });
+    return response;
+  };
+
   }
+
+
 
 })();

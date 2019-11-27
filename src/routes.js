@@ -26,15 +26,16 @@
 		.state('items',{
 			url: '/items/{itemId}',
 			templateUrl:'src/restaurantMenu/templates/itemsList.template.html',
-			controller: 'ItemDetailController as itemDetail',
-			resolve:{
-				itemsList: ['$stateParams','fetchItemCategories',function($stateParams, fetchItemCategories){
-					console.log("itemsList:",fetchItemCategories.getItems($stateParams.itemId));
-					// var index = ctrl.getItemFilter($stateParams.itemId);
-					// console.log("index:",index);
-						return fetchItemCategories.getItems($stateParams.itemId);
-				}]
-			}
+			controller: 'ItemDetailController as itemDetail'
+			// resolve:{
+			// 	itemsList: ['$stateParams',function($stateParams){
+			// 		var itemList = itemDetail.getMenuItems($stateParams.itemId);
+			// 		console.log("itemsList:",itemList);
+			// 		// var index = ctrl.getItemFilter($stateParams.itemId);
+			// 		// console.log("index:",index);
+			// 			return itemList;
+			// 	}]
+			// }
 		});
 
 	}
