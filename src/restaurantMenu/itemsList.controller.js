@@ -11,6 +11,7 @@
 		var promise = fetchItemCategories.getMenuForCategory($stateParams.itemId);
 		promise.then(function(itemCategories){
 			itemDetail.sortedItems=itemCategories.data.menu_items;
+			console.log(itemDetail.sortedItems);
 		}).catch(function(){
 			console.log("Failed to fetch restuarant menu");
 		});
