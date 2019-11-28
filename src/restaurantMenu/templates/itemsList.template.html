@@ -1,16 +1,14 @@
 <div style="width: 150%;padding-left: 20px;" >
-<h2>Items in the Selected Category</h2>
 <table style="padding-left:20px; border-color: black;" border="2" width="50%">
-	<tr style="text-align: center; padding-left: 10px; font-size: 20px; font-weight: bold; color:white; font-style: italic; padding-right: 10px; color: rgb(63, 79, 97);background: rgb(221, 237, 232);"> 
+	<tr style="text-align: center; padding-left: 10px; font-size: 20px; font-weight: bold; color:white; font-style: italic; padding-right: 10px; color: rgb(63, 79, 97);background: rgb(221, 237, 232);">
 		<td>Name</td>
 		<td>Description</td>
 		<td>Price</td>
 	</tr>
-	<tr ng-repeat='item in itemDetail.sortedItems' style="background: rgb(63, 79, 97);color:white;font-weight: bold;">
-			<td>{{item.name}}</td> 
+	<tr ng-repeat='item in $ctrl.itemdetails' style="background: rgb(63, 79, 97);color:white;font-weight: bold;">
+			<td>{{item.name}}</td>
 			<td >{{item.description}}</td>
 			<td style="padding-left: 50px; padding-right: 50px;">large: ${{item.price_large}} / small: ${{item.price_small}}</td>
-			<!-- <td><button href="#" ng-click='itemDetail.removeItem($index);' style="padding-left: 10px; font-size: 20px; font-weight: bold; color:white; font-style: italic; padding-right: 10px; background: rgb(168,19,8);">Remove Item</button></td> -->
 	</tr>
 </table>
 </div>

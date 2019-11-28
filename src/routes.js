@@ -20,12 +20,12 @@
 		})
 		.state('categories',{
 			url: '/categories',
-			templateUrl:'src/restaurantMenu/templates/categories.template.html',
+			templateUrl:'src/restaurantMenu/templates/main-categories.template.html',
 			controller: 'CategoriesAppController as ctrl'
 		})
 		.state('items',{
 			url: '/items/{itemId}',
-			templateUrl:'src/restaurantMenu/templates/itemsList.template.html',
+			templateUrl:'src/restaurantMenu/templates/main-itemsList.template.html',
 			controller: 'ItemDetailController as itemDetail'
 		});
 

@@ -2,10 +2,11 @@
   'use strict';
 
   angular.module('RestaurantApp')
-  .component('items', {
-    templateUrl: 'src/restaurantMenu/templates/items.template.html',
+  .component('itemsList', {
+    templateUrl: 'src/restaurantMenu/templates/itemsList.template.html',
     bindings: {
-      items: '<'
+      itemdetails: '<',
+      heading:'<'
     }
   });
 

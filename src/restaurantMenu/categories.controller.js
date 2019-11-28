@@ -5,14 +5,14 @@
 
 	CategoriesAppController.$inject=['fetchItemCategories'];
 	function CategoriesAppController(fetchItemCategories){
-		var CategoriesItems = this;
-		CategoriesItems.cats=[];
+		var ctrl = this;
+		ctrl.cats=[];
 		// List of shopping items
-		CategoriesItems.items = [];
+		ctrl.items = [];
 
 		var promise = fetchItemCategories.getMenuItems();
 		promise.then(function(itemCategories){
-			CategoriesItems.cats =itemCategories.data;
+			ctrl.cats =itemCategories.data;
 		}).catch(function(){
 			console.log("Failed to fetch restuarant menu");
 		});

@@ -10,6 +10,7 @@
 		<h1 style="padding-left: 20px; padding-bottom: 10px; padding-top: 10px; font-weight: bold; color: white; background-color: grey;">Restaurant</h1>
 
 		<div style="padding-left: 20px;" ng-controller='CategoriesAppController as ctrl'>
+			<a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="/" ui-sref-active="activeTab" >Home</a>
 			<a class="btn btn-primary" style="background: grey; font-size: 20px;" ui-sref="categories" ui-sref-active="activeTab" >categories of menu items</a>
 		</div>
 
@@ -19,13 +20,14 @@
 		<!-- Module includes -->
 		<script src="src/restaurantMenu/restaurant.module.js"></script>
 
-	    <!-- Routes -->
-    	<script src="src/routes.js"></script>
+    <!-- Routes -->
+  	<script src="src/routes.js"></script>
 
-    	<!-- module artifacts -->
+  	<!-- module artifacts -->
 		<script src="src/restaurantMenu/home.controller.js"></script>
 		<script src="src/restaurantMenu/itemsList.controller.js"></script>
 		<script src="src/restaurantMenu/categories.controller.js"></script>
+		<!-- Inludes components -->
 		<script type="text/javascript" src="src/restaurantMenu/categories.component.js"></script>
 		<script type="text/javascript" src="src/restaurantMenu/itemsList.component.js"></script>
 		<script type="text/javascript" src="src/restaurantMenu/restaurant.service.js"></script>
