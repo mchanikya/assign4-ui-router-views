@@ -26,7 +26,25 @@
 		.state('items',{
 			url: '/items/{itemId}',
 			templateUrl:'src/restaurantMenu/templates/main-itemsList.template.html',
-			controller: 'ItemDetailController as itemDetail'
+			controller: 'ItemDetailController as itemDetail',
+			resolve:{
+				listItems:['fetchItemCategories','$q','$timeout',function(fetchItemCategories,$q,$timeout){
+					var deferred=$q.defer();
+					var iList=[]
+					fetchItemCategories.getMenuForCategory().then(function(data){
+						iList=data.data.menu_items;
+					})
+					.catch(function () {
+						console.log("Error");
+					});
+				    // Wait 2 seconds before returning
+				    $timeout(function () {
+				      // deferred.reject(items);
+				      deferred.resolve(iList);
+				    }, 800);
+					return deferred.promise;
+				}]
+			}
 		});
 
 	}

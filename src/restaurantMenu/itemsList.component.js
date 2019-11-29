@@ -5,8 +5,7 @@
   .component('itemsList', {
     templateUrl: 'src/restaurantMenu/templates/itemsList.template.html',
     bindings: {
-      itemdetails: '<',
-      heading:'<'
+      itemdetails: '<'
     }
   });
 
